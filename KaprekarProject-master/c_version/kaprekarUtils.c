@@ -26,6 +26,7 @@ int isKaprekar(int n) {
 
   if(n < 1) {
     return 0;
+    //in order to return false you have to put return 0
   }
 
   int i;
@@ -38,8 +39,8 @@ int isKaprekar(int n) {
   //The variable declared is numDigits, numberOfDigits was in the for loop
   for(i=1; i<=numDigits; i++) {
     //increase the modulus by a factor of 10
-    modulous *= 10;
-
+    modulus *= 10;
+    //modulus misspelled
 
     //split the square into two parts
     first = square / modulus;

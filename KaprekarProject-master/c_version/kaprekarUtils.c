@@ -32,6 +32,8 @@ int isKaprekar(int n) {
   int i;
   long square = n * (long) n;
   int numDigits = log10(n) + 1;
+  //you did not need to specify int in the quation since n is already declared
+  //an int in the isKaprekar statement
   long modulus = 0;
   long first, second;
 
@@ -47,8 +49,9 @@ int isKaprekar(int n) {
     second = square % modulus;
 
     //test if the split makes a Kaprekar number
-    if(second > 0 &&
-       first + second == n) {
+    if(second > 0 && first + second == n) {
+      //Put the entire statment on one line instead of making into two, makes
+      //it easier to read
       return 1;
     }
   }

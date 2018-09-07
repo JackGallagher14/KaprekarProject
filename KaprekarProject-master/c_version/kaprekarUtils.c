@@ -26,32 +26,33 @@ int isKaprekar(int n) {
 
   if(n < 1) {
     return 0;
-    //in order to return false you have to put return 0
+    //*in order to return false you have to put return 0
   }
 
   int i;
   long square = n * (long) n;
-  int numDigits = log10(n) + 1;
-  //you did not need to specify int in the quation since n is already declared
-  //an int in the isKaprekar statement
-  long modulus = 0;
+  int numDigits = log(n) + 1;
+  //*it can be log base anything not just log base 10
+  //*you did not need to specify int in the quation since n is already declared
+  //*an int in the isKaprekar statement
+  long modulus = 1;
   long first, second;
 
   //for each possible "split" of the square...
-  //The variable declared is numDigits, numberOfDigits was in the for loop
+  //*The variable declared is numDigits, numberOfDigits was in the for loop
   for(i=1; i<=numDigits; i++) {
     //increase the modulus by a factor of 10
     modulus *= 10;
-    //modulus misspelled
+    //*modulus misspelled
 
     //split the square into two parts
     first = square / modulus;
     second = square % modulus;
 
     //test if the split makes a Kaprekar number
-    if(second > 0 && first + second == n) {
-      //Put the entire statment on one line instead of making into two, makes
-      //it easier to read
+    if(second > 0 && (first + second) == n) {
+      //*Put the entire statment on one line instead of making into two, makes
+      //*it easier to read
       return 1;
     }
   }
